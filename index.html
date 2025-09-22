@@ -3,30 +3,122 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Certificate-verify</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Certificado - Ortiz Luis</title>
+  <style>
+    :root { --bg: #f4f6f8; --card: #fff; --accent: #0b5cff; }
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: #111;
+    }
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(12,18,31,0.04);
+    }
+    .site-header h1 { font-size: 1.125rem; margin: 0; }
+    .actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .image-frame {
+      width: 100%;
+      max-width: 1000px;
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(12,18,31,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .image-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+    .error {
+      color: #a00;
+      margin-top: 0.75rem;
+    }
+    .hidden {
+      display: none;
+    }
+    .qr-section {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .qr-section h2 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      color: #333;
+    }
+    .qr-image {
+      max-width: 200px;
+      border: 4px solid #eee;
+      border-radius: 10px;
+      padding: 8px;
+      background: #fff;
+    }
+    .site-footer {
+      padding: 0.75rem 1.25rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <h1>Certificate-verify </h1>
+    <h1>Certificado</h1>
     <div class="actions">
-      <a id="downloadBtn" class="btn" href="#" download="certificado.jpg">Descargar</a>
-      <button id="printBtn" class="btn">Imprimir</button>
+      <a class="btn" href="certif-ortiz-luis.jpg" download="certif-ortiz-luis.jpg">Descargar</a>
+      <button class="btn" onclick="window.print()">Imprimir</button>
     </div>
   </header>
 
   <main class="content">
     <div class="image-frame">
-      <!-- Cambia la URL aquí si necesitas otra imagen o si la original no carga -->
-      <img id="certImg" alt="Certificado" src="https://certificados.udla.edu.ec/Certificate/GetImage/1261ABE7F01E" />
-      <div id="errorMsg" class="error hidden">No se pudo cargar la imagen. Intenta descargarla y colocarla en el repo (assets/certificado.jpg).</div>
+      <img alt="Certificado" src="certif-ortiz-luis.jpg" onerror="document.getElementById('errorMsg').classList.remove('hidden')" />
+      <div id="errorMsg" class="error hidden">No se pudo cargar la imagen.</div>
     </div>
+
+    <section class="qr-section">
+      <h2>Escanea para verificar</h2>
+      <img class="qr-image" src="certificate_qr.png" alt="Código QR de verificación" />
+    </section>
   </main>
 
   <footer class="site-footer">
-    <small>Clon estático para GitHub Pages — creado por Ortiz Comunicaciones</small>
+    <small>Clon estático para GitHub Pages — Ortiz Comunicaciones</small>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
